@@ -16,17 +16,17 @@ class Download extends React.Component {
     const artist = data.artist[0];
     const title = data.title;
 
-    // Notification.requestPermission().then(function (permission) {
-    //   //console.log(this);
-    //   // If the user accepts, let's create a notification
-    //   if (permission === "granted") {
-    //     new Notification(`Your Download is ready`, {
-    //       body: `${title} by ${artist} is ready to download  `,
-    //       icon: image,
-    //       image: image,
-    //     });
-    //   }
-    // });
+    Notification.requestPermission().then(function (permission) {
+      //console.log(this);
+      // If the user accepts, let's create a notification
+      if (permission === "granted") {
+        new Notification(`Your Download is ready`, {
+          body: `${title} by ${artist} is ready to download  `,
+          icon: image,
+          image: image,
+        });
+      }
+    });
 
     // console.log(this.props.location.state.data);
   }
