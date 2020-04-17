@@ -1,25 +1,18 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { Route } from "react-router";
+
+// Container
+import Converture from "./containers/Converture/Converture";
+import Download from "./containers/Download/Download";
+import Error from "./containers/Error/Error";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <React.Fragment>
+      <Route path="/" exact component={Converture} />
+      <Route path="/sucess" component={Download} />
+      <Route path="/error" component={Error} />
+    </React.Fragment>
   );
 }
 

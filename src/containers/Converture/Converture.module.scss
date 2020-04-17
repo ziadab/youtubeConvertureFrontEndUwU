@@ -1,0 +1,10 @@
+.container {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background: linear-gradient(150deg, #ff4655 15%, #0f1923 100%);
+    overflow: hidden;
+}
+

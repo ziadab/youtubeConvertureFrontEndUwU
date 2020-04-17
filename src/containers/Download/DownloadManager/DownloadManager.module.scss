@@ -1,0 +1,55 @@
+@import "../../../styles/main.scss";
+
+$borderRaduis : 10px;
+
+.box {
+    display: flex;
+    height: 400px;
+    width: 60%;
+    border-radius: 10px;
+}
+
+
+
+.imageContainer {
+    width: auto;
+    height: 100%;
+    object-fit: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    //flex-basis: 250px;
+    flex-basis: 30%;
+    border-top-left-radius: $borderRaduis;
+    border-bottom-left-radius: $borderRaduis;
+    filter: blur(0.6px);
+    -webkit-filter: blur(0.6px);
+    transition: filter .2s ease;
+
+    &:hover {
+        filter: blur(0px);
+    -webkit-filter: blur(0px);
+    }
+}
+
+.dataBackground{
+    border: 1px solid #000;
+    background-color: #fff;
+    flex-basis: 70%;
+    border-top-right-radius: $borderRaduis;
+    border-bottom-right-radius: $borderRaduis;;
+}
+
+.data {
+    
+    padding: 30px;
+    .title {
+        //text-transform : uppercase;
+        width: 500px;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+        font-size: 36px;
+        color: $second;
+        //font-family: 'DINNextW1G';
+    }
+}

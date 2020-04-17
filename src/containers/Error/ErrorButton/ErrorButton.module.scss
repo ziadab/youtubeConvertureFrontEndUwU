@@ -1,0 +1,41 @@
+@import "../../../styles/main.scss";
+
+.btn {
+    cursor: pointer;
+    padding: 15px 30px;
+    margin: 15px;
+    border: none;
+    border-radius: 5px;
+    background: linear-gradient(50deg, #fff 50%, $second 50%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    position: relative;
+    color: $second;
+    font-weight: bold;
+    font-family:"DINNextW1G";
+    
+    &:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        border-radius: 5px;
+        background: linear-gradient(50deg, $second 50%, #fff 50%);
+        z-index: -1;
+    }
+}
+
+.btn,
+.btn:after {
+    background-size: 300%;
+    background-position: 100%;
+    transition: .4s, font-size 0.2s;
+}
+  
+.btn:hover,
+.btn:hover:after {
+    background-position: 0;
+    color: orangeRed; /*For IE*/
+}

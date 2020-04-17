@@ -1,0 +1,60 @@
+@import "../../styles/main.scss";
+
+$offset: 187;
+$duration: 1.4s;
+
+.text{
+  font-size: 36px;
+  color: $second;
+}
+
+.container {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    overflow: hidden;
+    flex-direction: column;
+    //background: linear-gradient(150deg, #ff4655 15%, #0f1923 100%);
+}
+
+
+.spinner {
+  margin-top: 50px;
+  animation: rotator $duration linear infinite;
+}
+
+@keyframes rotator {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(270deg); }
+}
+
+.path {
+  stroke-dasharray: $offset;
+  stroke-dashoffset: 0;
+  transform-origin: center;
+  animation:
+    dash $duration ease-in-out infinite, 
+    colors ($duration*4) ease-in-out infinite;
+}
+
+@keyframes colors {
+    0% { stroke: $primary; }
+    25% { stroke: $second; }
+    50% { stroke: $primary; }
+    75% { stroke: $second; }
+  100% { stroke: $primary; }
+}
+
+@keyframes dash {
+ 0% { stroke-dashoffset: $offset; }
+ 50% {
+   stroke-dashoffset: $offset/4;
+   transform:rotate(135deg);
+ }
+ 100% {
+   stroke-dashoffset: $offset;
+   transform:rotate(450deg);
+ }
+}
