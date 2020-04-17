@@ -10,19 +10,47 @@ export default (props) => {
       className={[
         classes.box,
         classes.animated,
-        classes.slideInDown,
+        classes.fadeIn,
         classes["delay-1s"],
       ].join(" ")}
     >
       <div
         style={{ backgroundImage: `url("${props.data.albumCover}")` }}
-        className={classes.imageContainer}
+        className={[
+          classes.imageContainer,
+          classes.animated,
+          classes.fadeIn,
+          classes["delay-2s"],
+        ].join(" ")}
       ></div>
       <div className={classes.dataBackground}>
         <div className={classes.data}>
-          <div className={classes.title}>{props.data.title}</div>
-          {console.log(props.data.artist)}
-          <div>By: {props.data.mainArtist}</div>
+          <div
+            className={[
+              classes.title,
+              classes.animated,
+              classes.fadeInLeft,
+              classes["delay-2s"],
+            ].join(" ")}
+          >
+            {props.data.title}
+          </div>
+          <div
+            className={[
+              classes.artist,
+              classes.animated,
+              classes.fadeInLeft,
+              classes["delay-2s"],
+            ].join(" ")}
+          >
+            By: {props.data.mainArtist}
+          </div>
+          <a
+            className={[classes.download].join(" ")}
+            href={props.data.downloadLink}
+          >
+            Download
+          </a>
         </div>
       </div>
     </div>
